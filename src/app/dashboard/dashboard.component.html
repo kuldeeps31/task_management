@@ -1,0 +1,96 @@
+
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+              <h2 style="color:rgb(185, 191, 202);">Taskmanagement</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#">HOME</a></li>
+                
+                <li><a href="#">COMPLETED</a></li>
+                <li><a href="#">TO DO</a></li>
+                <li><a href="#">IN PROGRESS</a></li>
+                <li><a href="task">TASK</a></li>
+            
+                
+                <!--</li>-->
+               
+            </ul>
+
+            <div class="notification">
+                <span>🔔</span>
+            </div>
+            <div class="profile" (click)="toggledropdown()">
+                
+                <div class="profile-pic">
+                    <span>KC</span>
+                </div>
+                <div class="dropdown" [class.active]="dropdownVisible" >
+                    <ul>
+                        <li><a href="#" (click)="onProfileClick($event)">Profile</a></li>
+                        <li><a href="#" (click)="onChangePasswordClick($event)">Change Password</a></li>
+                        <li><a href="#" (click)="onLogoutClick($event)">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hamburger" (click)="toggleNav()">
+                ☰
+            </div>
+            
+        </nav>
+        <main>
+            <section class="cards">
+                <div class="card">
+                    <h3>TOTAL TASK</h3>
+                    <p>backend</p>
+                    <span>backend-months</span>
+                </div>
+                <div class="card">
+                    <h3>COMPLETED TASK</h3>
+                    <p>backend</p>
+                    <span>backdend-months</span>
+                </div>
+                <div class="card">
+                    <h3>TASK IN PROGRESS</h3>
+                    <p>backend</p>
+                    <span>backend-moths</span>
+                </div>
+                <div class="card">
+                    <h3>TO DOS</h3>
+                    <p>backend-no</p>
+                    <span>backnd</span>
+                </div>
+            </section>
+            <section class="chart">
+                <h3></h3>
+                <canvas id="BarChart" ></canvas>
+                <canvas id="lineChart" ></canvas>
+                
+              
+            </section>
+            
+            
+
+            <!-- Change Password Form Section -->
+            <section class="change-password-form" *ngIf="showChangePasswordForm">
+                <div class="overlay"></div>
+                <div class="form-container">
+                    <h3>Change Password</h3>
+                    <!-- Add your change password form elements here -->
+                    <form >
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" name="currentPassword" required>
+
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                        <button type="submit">Change Password</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>

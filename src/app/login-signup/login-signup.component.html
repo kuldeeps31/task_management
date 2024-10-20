@@ -1,0 +1,76 @@
+
+<!--\\jhdshjol;''-->
+
+<!--<div class="login-page">
+    <div class="headingOnly">
+      <h2> Task Management System</h2>
+    </div>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="login-container">
+        <h1>Welcome Back!</h1>
+        <h3>Manage all Your Task in One Place</h3>
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" placeholder="Enter Email Address" formControlName="email">
+          <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched)">
+            <small *ngIf="loginForm.get('email')?.errors?.['required']" style="color: rgb(209, 94, 94);">Email is required.</small>
+            <small *ngIf="loginForm.get('email')?.errors?.['minlength']" style="color: rgb(209, 94, 94);">Email must be at least 4 characters long.</small>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" placeholder="Enter Password" formControlName="password">
+          <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched)">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']" style="color: rgb(209, 94, 94);">Password is required.</small>
+            <small *ngIf="loginForm.get('password')?.errors?.['minlength']" style="color: rgb(209, 94, 94);">Password must be at least 4 characters long.</small>
+          </div>
+        </div>
+        <div class="forgot-password">
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button class="login" type="submit">Log-in</button>
+      </div>
+    </form>
+  </div>-->
+
+  <div class ="topcontainer">
+
+<div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="signup">
+        <form>
+            <label for="chk" aria-hidden="true">Signup</label>
+  <input type="text" name="txt" placeholder="user name" [(ngModel)]="signupObj.username" required #fname="ngModel">
+  <!--<span *ngIf="fname.touched &&  !fname.valid"> Name is required</span>-->
+            <input type="email" name="email" placeholder="email" [(ngModel)]="signupObj.email" required #email="ngModel">
+            <!--<span *ngIf="email.touched && !email.valid">Email is required</span>        -->
+            
+            <input type="password" name="pswd" placeholder="password" [(ngModel)]="signupObj.password" required #password="ngModel">
+            <span *ngIf="password.touched && password.value.length <8" style="color: white; ">Password must be at least 8 characters long.</span>
+            <button [disabled]="password.value.length < 8" (click)="onsignup()">Signup</button>
+            
+        </form>
+
+    </div>
+
+    <div class="login">
+
+ <form>
+            <label for="chk" aria-hidden="true">login</label>
+            <!--<input type="text" name="txt" placeholder="user name" [(ngModel)]="signupObj.">-->
+            <input type="email" name="email" placeholder="email"   [(ngModel)]="loginObj.userName">
+            <input type="password" name="pswd" placeholder="password"   [(ngModel)]="loginObj.password">
+            <button (click)= "onlogin()" >login</button>
+            
+        </form>
+    </div>
+</div>
+
+
+
+  </div>
+
+  
+
+  

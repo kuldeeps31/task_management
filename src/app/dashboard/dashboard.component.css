@@ -1,0 +1,480 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1411112c;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: play 3s infinite;
+    
+}
+
+
+.logo h2 {
+    /*background: linear-gradient(45deg, #ff0000, #3e3c3b, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);;*/
+    /*color: hsl(186 100% 69%);*/
+    border: 0.15em solid hsl(186 100% 69%);
+    border-radius: 7px;
+    padding: 3px 4px;
+    color: #f0e5e5;
+    box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
+    /*box-shadow: #585656 13px 4px 50px;*/
+    font-size: 1.5em;
+    animation: glowing 20s linear;
+    /*color: #2161f3;*/
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.nav-links {
+    
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links li a {
+ 
+    text-decoration: none;
+    color: #f4e8e8;
+    border-radius: 5px;
+    padding: 3px 4px;
+    font-size: 1.1em;
+    justify-content: space-between;
+
+}
+.nav-links li a:hover{
+    box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
+}
+
+.nav-links li.active a {
+    color: #dfe3ea;
+    font-weight: bold;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.notification span {
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 20px;
+    
+}
+.notification:hover{
+    cursor: pointer;
+    animation: vibrate 1s infinite;
+}
+@keyframes vibrate {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+
+    
+}
+
+.profile-pic {
+    background-color: #e5e8ef5a;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    
+    
+
+}
+
+.dropdown {
+    
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ebf0f16b;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: none;
+    transition: all 0.6s ease;
+    z-index: 100;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    padding: 10px 20px;
+}
+
+.dropdown ul li a {
+    text-decoration: none;
+    color: #020202;
+    display: block;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    color: #151516;
+}
+
+.main {
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.card {
+    /*background-color:hsla(186, 20%, 58%, 0.936);*/
+    padding: 20px;
+    border: 0.15em solid hsl(186 100% 69%);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.card:hover{
+    cursor: pointer;
+    animation: shake 1s infinite;
+}
+
+
+@media (max-width:600px) {
+    .cards {
+        display: flex;
+        border: none;
+        text-decoration: none;
+        flex-wrap: wrap;
+        width: 200px;
+        /*gap: 10px;*/
+       
+    }
+    .card{
+        width: 20px;
+        height: 20px;
+        
+    }
+    
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+.card h3 {
+    font-size: 1.2em;
+    color: #f0e8e8;
+}
+
+.card p {
+    font-size: 2em;
+    color: #e5d1d1;
+    margin: 10px 0;
+}
+
+.card span {
+    font-size: 0.9em;
+    color: #f4ecec;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsla(186, 20%, 58%, 0.005);
+    padding: 20px 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    height: 350px;
+}
+canvas {
+    border: 0.15em solid hsl(186 100% 69%);
+  
+    height: 100%;
+}
+
+
+
+
+
+.change-password-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+}
+
+.change-password-form.active {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: none; 
+}
+
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+    display: none; /* Initially hidden */
+}
+
+.form-container h3 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #f5efef;
+}
+
+.form-container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-container button {
+    background-color: #2161f3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #1b4ca7;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/************************************ navbar respoonsive */
+@media (max-width: 768px) {
+
+.logo{
+  display: none;
+}
+.profile{
+    top: 30px;
+}
+
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1411112c;
+        width: 70%;
+        text-align: center;
+        gap: 7px;
+        /*padding: px 0;*/
+        
+        justify-content: space-evenly;
+    }
+
+
+  
+    .nav-links.active {
+        height: 100vh;
+        right: 0;
+        width: 100%;
+       
+        display: flex;
+        background-color: #cccccc44;
+        backdrop-filter: blur(10px); /* Apply blur to the background */
+    -webkit-backdrop-filter: blur(1px);
+    }
+  
+
+    .hamburger {
+        display: block;
+        color:white;
+        margin: 0 2px;
+        margin-left: 8px;
+    top: 50px;
+    }
+    
+    
+}
+
+    
+
+
+/* ****************************************cards responsive */
+    @media (max-width: 600px) {
+        .card {
+            flex: 1 1 calc(50% - 20px);
+         /*margin-left: 20px;*/
+            /* 2 cards per row on medium screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        
+        .card {
+            flex: 1 1 calc(100% - 20px);   /* 1 card per row on small screens */
+            margin: 5px;
+               
+            align-items: center;
+            /*left: -220px;*/
+            /* Reduced margin for smaller screens */
+        }
+    
+        .card h3 {
+            font-size: 15px;   
+            margin-bottom: -40%; 
+        }
+    
+        .card p {
+            font-size: 12px;
+            margin-bottom: -3%;  
+                          /* Smaller font for text */
+        }
+    
+        .card span {
+            font-size: 10px; 
+            margin-bottom: -7%;
+            /* Smaller font for additional info */
+        }
+    }
+
+    @media (max-width: 600px) {
+
+
+        main {
+            display: flex;                       /* Use Flexbox for layout */
+            flex-direction: column;              /* Stack items vertically */
+            align-items: center;                 /* Center items horizontally */
+            justify-content: center;             /* Center items vertically */
+            padding: 20px;                       /* Padding around the main section */
+            /*min-height: calc(100vh - 100px);    Minimum height to take full viewport height*/
+        }
+        
+       .chart{
+        
+        width: 300px;
+        height: auto;
+        overflow: scroll;
+
+    }
+        .canvas {
+            height: auto;                /* Adjust height for medium screens */
+        }
+    
+        .chart h3 {
+            font-size: 1.5em;             /* Smaller font for headings on medium screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+
+
+        .canvas {
+            height: 200px;                /* Further adjust height for small screens */
+        }
+    
+        .chart h3 {
+            font-size: 1.2em;             /* Smaller font for headings on small screens */
+        }
+    }
+    
