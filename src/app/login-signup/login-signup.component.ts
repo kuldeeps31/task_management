@@ -52,12 +52,7 @@ this.signupUsers=JSON.parse(localData);
       alert('Password must be at least 8 characters long.');
       return;
     }
-//check if user exist
-    //const userExists = this.signupUsers.find(user => user.userName == this.signupObj.userName);
-    //if (userExists) {
-    //  alert('User already exists. Please use a different username.');
-    //  return; // Stop if user exists
-    //}
+
 
    
 

@@ -1,0 +1,94 @@
+
+
+  <div class="container">
+    <h2 >{{ isEditing ? 'Edit Task' : 'ENTER PROGRAM' }}</h2>
+    <!--<button (click)="navigateTotasktable()" class="aa" style="font-weight: 600;">Create a <span>New Task</span></button>-->
+    <button (click)="navigateToDashboard()" class="a" style="float: right;">Go to <span >DASHBOARD</span></button>
+    <button (click)="navigatetocoderun()" class="a" style="float: right;">RUN <span >CODE</span></button>
+    <form (ngSubmit)="isEditing ? updateTask() : addTask()">
+      <div>
+        <label for="title">Program Title:</label>
+        <input 
+          type="text" 
+          id="title" 
+          [(ngModel)]="taskTitle" 
+          name="taskTitle" 
+          required 
+          [readonly]="isEditing" 
+        />
+      </div>
+  
+      <div>
+        <label for="description"> Description:</label>
+        <textarea 
+          id="description" 
+          [(ngModel)]="taskDescription" 
+          name="taskDescription" 
+          required>
+        </textarea>
+      </div>
+  
+      <div>
+        <label for="priority">Enter Code:</label>
+        <input 
+          type="text" 
+          id="priority" 
+          [(ngModel)]="taskPriority" 
+          name="taskPriority" 
+        />
+      </div>
+  
+      <div>
+        <label for="dueDate">Due Date:</label>
+        <input 
+          type="date" 
+          id="dueDate" 
+          [(ngModel)]="taskDueDate" 
+          name="taskDueDate" 
+        />
+      </div>
+  
+      <div>
+        <label for="assignedTo">Assigned To:</label>
+        <input 
+          type="text" 
+          id="assignedTo" 
+          [(ngModel)]="taskAssignedTo" 
+          name="taskAssignedTo" 
+        />
+      </div>
+  
+      <button type="submit">{{ isEditing ? 'Update Task' : 'Save' }}</button>
+      <button type="button" (click)="clearForm()">Delete</button>
+    </form>
+  
+    <h3>PROGRESS</h3>
+  
+    <table border="1" width="100%" style="border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Priority</th>
+          <th>Due Date</th>
+          <th>Assigned To</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.dueDate }}</td>
+          <td>{{ task.assignedTo }}</td>
+          <td>
+            <button (click)="editTask(task)">Edit</button>
+            
+            <button (click)="deleteTask(task.title)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -16,4 +16,8 @@ constructor(private router:Router){}
     this.router.navigate(['dashboard']);
 
   }
+  navigateTotasktable(){
+    console.log("navigate to task table");
+    this.router.navigate(['newtask']);
+  }
 }

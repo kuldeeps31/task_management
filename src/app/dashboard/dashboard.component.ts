@@ -50,10 +50,10 @@ export class DashboardComponent implements OnInit {
           type: 'bar',
           data: {
           
-            labels: ['task1', 'task2', 'task3','task4','task5'],
+            labels: ['kuldeep', 'vinimay', 'harshit','liril'],
             datasets: [{
-              label: 'Tasks',
-              data: [298, 476, 789,132,700],
+              label: 'Progress',
+              data: [20,40,60,80,100],
               backgroundColor: 'white',
               borderColor: 'black',
               borderWidth: 3
